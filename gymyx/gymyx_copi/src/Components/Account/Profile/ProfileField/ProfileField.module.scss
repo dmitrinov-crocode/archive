@@ -1,0 +1,83 @@
+@import '@/styles/mixins.scss';
+
+.profile-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--white-transperent, rgba(255, 255, 255, 0.1));
+
+  @include media-breakpoint-down(lg) {
+    border-radius: 15px;
+    padding: 9px 18px;
+  }
+
+  @include media-breakpoint-between(lg, xxxl) {
+    padding: 20px 30px;
+    border-radius: 22px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    border-radius: 30px;
+    padding: 20px 40px;
+  }
+
+  &__label {
+    color: var(--white-transperent-2, rgba(255, 255, 255, 0.4));
+    font-weight: 500;
+    line-height: 135%;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+  }
+
+  &__field {
+    color: var(--white, #fff);
+    font-weight: 500;
+    line-height: 112%;
+    letter-spacing: -0.4px;
+    background-color: transparent;
+    border: 0;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 18px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 26px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 30px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 40px;
+    }
+
+    &:read-only {
+      color: var(--white-transperent-2, rgba(255, 255, 255, 0.4));
+      cursor: default;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

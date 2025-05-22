@@ -1,0 +1,81 @@
+@import '@/styles/mixins.scss';
+
+.mobile-menu {
+  position: fixed;
+  top: -130%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black, #212428);
+  transition: 0.3s ease;
+  z-index: -1;
+  padding-top: 70px;
+  padding-bottom: 20px;
+
+  &.active {
+    top: 0;
+  }
+
+  @include media-breakpoint-up(xl) {
+    display: none;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: auto;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 80px;
+    overflow: auto;
+  }
+
+  &__nav-item {
+    color: var(--white, #fff);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28.08px;
+    letter-spacing: -0.24px;
+    padding: 10px;
+  }
+
+  &__login {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white, #fff);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16.2px;
+
+    u {
+      margin: 0 5px;
+    }
+  }
+
+  &__login-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__login-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

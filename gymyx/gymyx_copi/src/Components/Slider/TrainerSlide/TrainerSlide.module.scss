@@ -1,0 +1,505 @@
+@import '@/styles/mixins.scss';
+
+.slide {
+  position: relative;
+  box-shadow: 0px 0px 21px 0px rgba(22, 23, 26, 0.6);
+  overflow: hidden;
+
+  ~ div {
+    background: unset !important;
+  }
+
+  @include media-breakpoint-down(lg) {
+    height: 360px;
+    max-width: 270px;
+    border-radius: 15px;
+    margin: 0 auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 559px;
+    border-radius: 30px;
+  }
+
+  @include media-breakpoint-between(lg, xxl) {
+    height: 500px;
+  }
+
+  @include media-breakpoint-between(xxl, xxxl) {
+    height: 610px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    height: 748px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__video_play {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border-radius: 50%;
+    border: none;
+    background: #294AE7;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #3c5cfc;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      width: 85px;
+      height: 85px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      width: 70px;
+      height: 70px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      width: 60px;
+      height: 60px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 50px;
+      height: 50px;
+    }
+
+    &--hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    & svg {
+      width: 100%;
+      height: 100%;
+
+      @include media-breakpoint-up(xxl) {
+        transform: translateX(4px);
+        max-width: 40px;
+        max-height: 40px;
+      }
+
+      @include media-breakpoint-between(xl, xxl) {
+        transform: translateX(4px);
+        max-width: 30px;
+        max-height: 30px;
+      }
+  
+      @include media-breakpoint-between(lg, xl) {
+        transform: translateX(4px);
+        max-width: 30px;
+        max-height: 30px;
+      }
+  
+      @include media-breakpoint-down(lg) {
+        transform: translateX(4px);
+        max-width: 25px;
+        max-height: 25px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    transition: 0.3s;
+
+    @include media-breakpoint-down(md) {
+      padding: 18px;
+    }
+
+    @include media-breakpoint-between(md, xxl) {
+      padding: 20px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      padding: 30px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 40px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: inherit;
+      background: linear-gradient(180deg, #ffffff00 55%, #2A4BE8A6 100%, transparent 100%),
+        transparent -50px -66px/108.945% 106.684% no-repeat;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    &--hidden {
+      &::after {
+        background: transparent;
+      }
+    }
+  }
+
+  &__content_inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    transition: 0.3s;
+
+    &--hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__name {
+    color: var(--white, #fff);
+    font-weight: 600;
+    word-break: break-word;
+
+    @include media-breakpoint-up(md) {
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 18px;
+      margin-bottom: 8px;
+      letter-spacing: -0.24px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__description {
+    color: var(--white, #fff);
+    font-weight: 500;
+    line-height: 135%;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+      margin-bottom: 34px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 20px;
+      margin-bottom: 26.6px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 18px;
+      margin-bottom: 34px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    color: #294AE7;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #f5f5f5;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 14px;
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 20px;
+      line-height: 24px;
+      padding: 10px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 16px;
+      line-height: 20px;
+      padding: 5px;
+    }
+  }
+
+  &__details {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    // background: linear-gradient(260deg, rgba(13,45,200,1) 45%, rgba(41,74,231,1) 100%);
+    background: #294AE7;
+    transition: 0.3s;
+
+    @include media-breakpoint-down(md) {
+      padding: 18px;
+    }
+
+    @include media-breakpoint-between(md, xxl) {
+      padding: 25px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      padding: 30px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 40px;
+    }
+
+    &--show {
+      top: 0;
+    }
+  }
+
+  &__details_fio {
+    font-weight: 600;
+    color: #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 40px;
+      line-height: 45px;
+      margin-bottom: 13px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      font-size: 34px;
+      line-height: 45px;
+      margin-bottom: 10px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      font-size: 28px;
+      line-height: 34px;
+      margin-bottom: 5px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 24px;
+      line-height: 25px;
+      margin-bottom: 10px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 22px;
+      line-height: 18px;
+      margin-bottom: 8px;
+    }
+
+    // @include media-breakpoint-down(lg) {
+    //   font-size: 24px;
+    //   line-height: 28px;
+    //   margin-bottom: 8px;
+    // }
+
+    // @include media-breakpoint-between(lg, xl) {
+    //   font-size: 36px;
+    //   line-height: 38px;
+    //   margin-bottom: 10px;
+    // }
+
+    // @include media-breakpoint-between(xl, xxxl) {
+    //   font-size: 38px;
+    //   line-height: 45px;
+    //   margin-bottom: 10px;
+    // }
+
+    // @include media-breakpoint-up(xxxl) {
+    //   font-size: 50px;
+    //   line-height: 58px;
+    //   margin-bottom: 13px;
+    // }
+  }
+
+  &__details_experience {
+    font-weight: 500;
+    color: #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+      line-height: 35px;
+      margin-bottom: 31px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      font-size: 22px;
+      line-height: 28px;
+      margin-bottom: 22px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 20px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 15px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 15px;
+      line-height: 18px;
+      margin-bottom: 10px;
+    }
+    // @include media-breakpoint-down(sm) {
+    //   font-size: 12px;
+    //   line-height: 14px;
+    //   margin-bottom: 10px;
+    // }
+
+    // @include media-breakpoint-between(sm, md) {
+    //   font-size: 16px;
+    //   line-height: 18px;
+    //   margin-bottom: 10px;
+    // }
+
+    // @include media-breakpoint-between(md, xxxl) {
+    //   font-size: 20px;
+    //   line-height: 27px;
+    //   margin-bottom: 20px;
+    // }
+
+    // @include media-breakpoint-up(xxxl) {
+    //   font-size: 26px;
+    //   line-height: 35px;
+    //   margin-bottom: 31px;
+    // }
+  }
+
+  &__details_directions {
+    flex: content;
+    height: 100%;
+    margin-left: 20px;
+
+    & li {
+      font-weight: 500;
+      color: #fff;
+
+      @include media-breakpoint-up(xxxl) {
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 13px;
+      }
+
+      @include media-breakpoint-between(xxl, xxxl) {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 13px;
+      }
+
+      @include media-breakpoint-between(xl, xxl) {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 10px;
+      }
+
+      @include media-breakpoint-between(lg, xl) {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 10px;
+      }
+
+      @include media-breakpoint-down(lg) {
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 8px;
+      }
+
+      // @include media-breakpoint-down(sm) {
+      //   font-size: 12px;
+      //   line-height: 14px;
+      //   margin-bottom: 8px;
+      // }
+  
+      // @include media-breakpoint-between(sm, md) {
+      //   font-size: 16px;
+      //   line-height: 18px;
+      //   margin-bottom: 10px;
+      // }
+  
+      // @include media-breakpoint-between(md, xxxl) {
+      //   font-size: 20px;
+      //   line-height: 27px;
+      //   margin-bottom: 10px;
+      // }
+  
+      // @include media-breakpoint-up(xxxl) {
+      //   font-size: 26px;
+      //   line-height: 35px;
+      //   margin-bottom: 13px;
+      // }
+    }
+  }
+}

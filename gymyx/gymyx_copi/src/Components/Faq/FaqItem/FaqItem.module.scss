@@ -1,0 +1,127 @@
+@import '@/styles/mixins.scss';
+
+.faq-item {
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  &:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+
+  &:not(.active) {
+    > p {
+      opacity: 0;
+      margin: 0;
+      height: 0;
+    }
+
+    > div > div {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+
+    cursor: pointer;
+
+    @include media-breakpoint-down(md) {
+      padding-bottom: 10px;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__title {
+    color: #fff;
+    font-weight: 500;
+    line-height: 112%;
+
+    @include media-breakpoint-down(md) {
+      font-size: 16px;
+      letter-spacing: -0.16px;
+      max-width: 90%;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      font-size: 24px;
+      letter-spacing: -0.4px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 30px;
+      letter-spacing: -0.4px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 40px;
+      letter-spacing: -0.4px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    transition: 0.3s ease;
+
+    @include media-breakpoint-down(md) {
+      min-width: 12px;
+      min-height: 12px;
+      width: 12px;
+      height: 12px;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      width: 20px;
+      height: 10px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      width: 28px;
+      height: 14px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    color: var(--white, #fff);
+    font-weight: 500;
+
+    transition: 0.3s ease;
+
+    @include media-breakpoint-down(md) {
+      font-size: 12px;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      max-width: 300px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      font-size: 18px;
+      margin-bottom: 50px;
+      margin-top: 15px;
+      max-width: 456px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 24px;
+      margin-bottom: 60px;
+      margin-top: 19px;
+      max-width: 937px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 30px;
+      margin-bottom: 80px;
+      margin-top: 28px;
+      max-width: 937px;
+    }
+  }
+}

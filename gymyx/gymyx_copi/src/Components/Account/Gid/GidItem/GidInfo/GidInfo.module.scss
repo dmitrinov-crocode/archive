@@ -1,0 +1,235 @@
+@import "@/styles/mixins.scss";
+
+.gid-item-info {
+  @include media-breakpoint-down(lg) {
+    padding-top: 15px;
+    overflow: hidden;
+  }
+
+  &__cards {
+    @include media-breakpoint-down(lg) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+      padding: 0 15px;
+    }
+  
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.092) 10%, hsla(0, 0%, 100%, 0.041));
+    box-shadow: 0px 0px 21px 0px rgba(22, 23, 26, 0.6);
+
+    @include media-breakpoint-down(lg) {
+      padding: 14px 18px;
+      border-radius: 15px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      padding: 15px 25px;
+      border-radius: 20px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      padding: 20px 30px;
+      border-radius: 20px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 35px 40px 40px 40px;
+      border-radius: 30px;
+    }
+
+    &:not(:last-child) {
+      @include media-breakpoint-between(lg, xxl) {
+        margin-bottom: 20px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        margin-bottom: 35px;
+      }
+    }
+  }
+
+  &__item-description {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+
+    @include media-breakpoint-up(xxxl) {
+      margin-bottom: 25px;
+      -webkit-line-clamp: 2;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      margin-bottom: 20px;
+      -webkit-line-clamp: 2;
+    }
+
+    @include media-breakpoint-down(lg) {
+      -webkit-line-clamp: 3;
+    }
+  }
+
+  &__item-text {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  &__item-text,
+  &__item-description {
+    color: var(--white, #fff);
+    font-weight: 500;
+    line-height: 135%;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 20px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 18px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+    }
+  }
+
+  &__item-tags-wrapper {
+    position: relative;
+
+    @include media-breakpoint-down(lg) {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 30px;
+        background: #2a2d31;
+        box-shadow: -1px 0 5px 5px #2a2d31;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+
+  &__item-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+
+    &--mobile {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow: auto;
+      padding: 0 15px;
+
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__item-tag {
+    border-radius: 50px;
+    font-weight: 600;
+    color: #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 10px 20px;
+      font-size: 22px;
+      line-height: 26.82px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      padding: 8px 20px;
+      font-size: 16px;
+      line-height: 19.5px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding: 5px 10px;
+      font-size: 12px;
+      line-height: 14.63px;
+    }
+
+    &--main {
+      background: linear-gradient(90deg, rgba(123,146,255,1) 20%, rgba(88,113,232,1) 70%);
+    }
+
+    &--default {
+      background: #294AE7;
+    }
+  }
+
+  &__item-content {
+  }
+
+  &__item-title {
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    line-height: 135%;
+    width: fit-content;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+      padding: 2px 15px;
+      border-radius: 17.837px;
+      margin-bottom: 8px;
+      border: 1px solid var(--white, #fff);
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 18px;
+      padding: 2px 25px 6px;
+      border-radius: 30px;
+      margin-bottom: 15px;
+      border: 1px solid var(--white, #fff);
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 20px;
+      padding: 4px 30px 8px;
+      border-radius: 30px;
+      margin-bottom: 15px;
+      border: 2px solid var(--white, #fff);
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+      padding: 5px 30px;
+      border-radius: 41px;
+      margin-bottom: 18px;
+      border: 2px solid var(--white, #fff);
+    }
+  }
+}

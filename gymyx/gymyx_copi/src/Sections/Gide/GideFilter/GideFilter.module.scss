@@ -1,0 +1,224 @@
+@import '@/styles/mixins.scss';
+
+.gide-filter {
+  @include media-breakpoint-down(lg) {
+    margin-bottom: -20px;
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include media-breakpoint-up(xxxl) {
+      gap: 50px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      gap: 25px;
+    }
+
+    &::before {
+      content: '';
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      bottom: 0;
+      // background: linear-gradient(0deg, rgba(0, 0, 0, 0.178) 32%, rgba(88,113,232,0) 100%);
+      background: linear-gradient(0deg, rgba(33, 36, 40, 0.9) 50%, rgba(88,113,232,0) 100%);
+
+      @include media-breakpoint-up(lg) {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      @include media-breakpoint-down(lg) {
+        height: 150px;
+      }
+    }
+
+    &--select {
+      @include media-breakpoint-down(lg) {
+        &::before {
+          height: 120px;
+          bottom: 100px;
+        }
+      }
+    }
+
+    &--bg {
+      @include media-breakpoint-down(lg) {
+        &::before {
+          background: linear-gradient(0deg, rgba(33, 36, 40, 0.9) 15%, rgba(88,113,232,0) 100%);
+          height: 500px;
+        }
+      }
+    }
+
+    
+  }
+
+  &__filter {
+    @include media-breakpoint-up(xxxl) {
+      width: 100%;
+      max-width: 422px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      width: 100%;
+      max-width: 290px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      position: fixed;
+      left: 50%;
+      bottom: 153px;
+      transform: translatex(-50%);
+      width: 201px;
+      transition: 0.3s;
+    }
+
+    &--down {
+      @include media-breakpoint-down(lg) {
+        bottom: 95px;
+      }
+    }
+  }
+
+  &__filter-inner {
+    position: relative;
+  }
+
+  &__filter-header {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+    background: #37393D;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 10px 25px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      padding: 7.5px 15px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding: 5px 14px;
+      box-shadow: 0px 4px 4px 0px #00000040;
+    }
+  }
+
+  &__filter-header-text {
+    font-weight: 600;
+    color: #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 22px;
+      line-height: 26.82px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 16px;
+      line-height: 19.5px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+      line-height: 14.66px;
+    }
+  }
+
+  &__filter-header-icon {
+    color: #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      width: 15px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      width: 13px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 8px;
+    }
+  }
+
+  &__filter-list {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    background: #37393D;
+    box-shadow: 0px 0px 21px 0px #16171A99;
+
+    @include media-breakpoint-up(xxxl) {
+      top: calc(100% + 20px);
+      padding: 40px;
+      border-radius: 25px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      top: calc(100% + 11px);
+      padding: 15px;
+      border-radius: 17px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      bottom: calc(100% + 10px);
+      padding: 20px;
+      border-radius: 14px;
+    }
+  }
+
+  &__filter-item {
+    padding: 5px 0;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 22px;
+      line-height: 26.82px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 16px;
+      line-height: 19.5px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+      line-height: 14.63px;
+    }
+
+    &--active {
+      position: relative;
+      padding-right: 20px;
+      pointer-events: none;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 12px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background: #fff;
+      }
+    }
+  }
+}

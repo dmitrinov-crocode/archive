@@ -1,0 +1,29 @@
+@import '/src/styles/mixins.scss';
+
+.booking-packages__content {
+  display: flex;
+
+  @include media-breakpoint-up(xxxl) {
+    gap: 35px;
+  }
+
+  @include media-breakpoint-between(lg, xxxl) {
+    gap: 30px;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    padding-bottom: 60px;
+  }
+
+  @include media-breakpoint-between(sm, lg) {
+    flex-direction: column;
+    gap: 25px;
+    padding-bottom: 40px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+    gap: 25px;
+    padding-bottom: 20px;
+  }
+}

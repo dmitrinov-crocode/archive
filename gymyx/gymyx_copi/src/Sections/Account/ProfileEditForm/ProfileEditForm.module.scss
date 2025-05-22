@@ -1,0 +1,357 @@
+@import '@/styles/mixins.scss';
+
+.profile-edit-form {
+  position: relative;
+
+  &__canvas {
+    opacity: 0;
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    position: absolute;
+  }
+
+  &__data {
+    display: grid;
+
+    @include media-breakpoint-down(md) {
+      gap: 38px;
+      margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      grid-template-columns: 200px auto;
+      gap: 30px;
+      margin-bottom: 48px;
+    }
+
+    @include media-breakpoint-between(lg, xxl) {
+      grid-template-columns: 200px auto;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      grid-template-columns: 250px auto;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      grid-template-columns: 308px auto;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__data-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    @include media-breakpoint-down(lg) {
+      gap: 20px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      gap: 20px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      max-width: 440px;
+      gap: 30px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      max-width: 587px;
+      gap: 40px;
+    }
+  }
+
+  &__error-field {
+    text-align: center;
+    color: red;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  }
+
+  &__avatar-wrapper {
+    position: relative;
+
+    @include media-breakpoint-up(xxxl) {
+      min-height: 344px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      min-height: 270px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      height: min-content;
+    }
+
+    @include media-breakpoint-down(xl) {
+      min-height: 167px;
+    }
+  }
+
+  &__avatar {
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    @include media-breakpoint-down(md) {
+      width: 150px;
+      height: 150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include media-breakpoint-between(md, xxl) {
+      width: 200px;
+      height: 200px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      width: 250px;
+      height: 250px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      width: 308px;
+      height: 308px;
+    }
+
+    input {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__avatar-edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000087;
+    z-index: 1;
+    transition: 0.3s ease;
+  }
+
+  &__avatar-edit &__edit-icon {
+    @include media-breakpoint-down(lg) {
+      width: 20px;
+      height: 20px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__date-birth {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 0;
+    background: linear-gradient(270deg, #0d2dc8 25%, #294ae7 100%);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 12px 28px;
+      // gap: 10px;
+      transform: translate(-50%);
+      max-width: 253px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      padding: 7px 20px;
+      // gap: 8px;
+      transform: translate(-50%);
+      max-width: 183px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      padding: 7px 20px;
+      // gap: 8px;
+      transform: translate(-50%, 23px);
+      max-width: 183px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      padding: 7px 20px;
+      // gap: 8px;
+      transform: translate(-50%, 15px);
+      max-width: 183px;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      padding: 6px 18px;
+      // gap: 8px;
+      transform: translate(-50%, 18px);
+      max-width: 160px;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 4px 14px;
+      // gap: 5px;
+      transform: translate(-50%);
+      max-width: 112px;
+    }
+  }
+
+  &__date-birth-text {
+    font-weight: 600;
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: #fff;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: inherit;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 28px;
+      line-height: 34.13px;
+      // max-width: max-content;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 20px;
+      line-height: 24.38px;
+      // max-width: 118px;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      font-size: 18px;
+      line-height: 22.38px;
+      // max-width: 107px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 12px;
+      line-height: 12px;
+      // max-width: 71px;
+    }
+  }
+
+  &__date-birth-edit-icon {
+    flex: 1 0 auto;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      max-width: 46px;
+      max-height: 39.7px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      max-width: 34.62px;
+      max-height: 29.67px;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      max-width: 30px;
+      max-height: 26px;
+    }
+
+    @include media-breakpoint-down(md) {
+      max-width: 19.39px;
+      max-height: 16.62px;
+    }
+  }
+
+  &__contacts {
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 20px;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      margin-bottom: 35px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__contacts-title {
+    color: var(--white, #fff);
+    font-weight: 600;
+    line-height: 113%;
+
+    @include media-breakpoint-down(md) {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__row {
+    display: grid;
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-down(lg) {
+      gap: 20px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      gap: 30px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      gap: 40px;
+    }
+  }
+}

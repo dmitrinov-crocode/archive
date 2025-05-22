@@ -1,0 +1,160 @@
+@import '@/styles/mixins.scss';
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+
+  &__counter {
+    color: var(--white, #fff);
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.66px;
+
+    @include media-breakpoint-between(lg, xxl) {
+      margin-right: 20px;
+      font-size: 42px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      margin-right: 30px;
+      font-size: 48px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      margin-right: 28px;
+      font-size: 66px;
+    }
+  }
+
+  &__counter-trainers {
+    color: var(--white, #fff);
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.66px;
+
+    @include media-breakpoint-between(lg, xxl) {
+      margin-right: 20px;
+      font-size: 25px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      margin-right: 30px;
+      font-size: 30px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      margin-right: 28px;
+      font-size: 40px;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__btn {
+    position: relative;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+
+    @include media-breakpoint-between(lg, xxxl) {
+      width: 52px;
+      height: 46px;
+      padding: 5px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      width: 77px;
+      height: 72px;
+      padding: 10px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+
+      @include media-breakpoint-between(lg, xxl) {
+        padding: 6px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        padding: 12px;
+      }
+    }
+
+    &-right {
+      transform: rotate(180deg);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__btn-trainers {
+    position: relative;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+
+    @include media-breakpoint-between(lg, xxxl) {
+      width: 35px;
+      height: 32px;
+      padding: 5px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      width: 54px;
+      height: 50px;
+      padding: 10px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+
+      @include media-breakpoint-between(lg, xxl) {
+        padding: 6px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        padding: 12px;
+      }
+    }
+
+    &-right {
+      transform: rotate(180deg);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '@/styles/mixins.scss';
+
+.checkout-content {
+  position: relative;
+
+  &__wrapper {
+    display: grid;
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: calc(50% - 20px) calc(50% - 20px);
+      gap: 40px;
+    }
+  }
+}

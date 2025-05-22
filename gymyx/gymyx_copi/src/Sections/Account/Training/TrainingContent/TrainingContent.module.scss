@@ -1,0 +1,17 @@
+@import "@/styles/mixins.scss";
+
+.training-content {
+  &__wrapper {
+    width: 100%;
+    display: grid;
+
+    @include media-breakpoint-down(lg) {
+      gap: 30px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+@import "@/styles/mixins.scss";
+
+.profile-create-form {
+  position: relative;
+
+  &__wrapper {
+  }
+
+  &__message-error {
+    text-align: center;
+    color: red;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  }
+
+  &__data {
+    display: grid;
+
+    @include media-breakpoint-down(md) {
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-between(md, xxl) {
+      grid-template-columns: 200px auto;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      grid-template-columns: 308px auto;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__data-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 587px;
+
+    > div:not(:last-of-type) {
+      @include media-breakpoint-down(xl) {
+        margin-bottom: 20px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__avatar {
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--white-transperent, rgba(255, 255, 255, 0.1));
+
+    @include media-breakpoint-down(md) {
+      width: 150px;
+      height: 150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include media-breakpoint-between(md, xxl) {
+      width: 200px;
+      height: 200px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      width: 308px;
+      height: 308px;
+    }
+
+    input {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__contacts {
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 24px;
+    }
+
+    @include media-breakpoint-between(md, xxl) {
+      margin-bottom: 35px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__contacts-title {
+    color: var(--white, #fff);
+    font-weight: 600;
+    line-height: 113%;
+
+    @include media-breakpoint-down(md) {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    @include media-breakpoint-between(md, xxl) {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__row {
+    display: grid;
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-down(xl) {
+      gap: 20px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      gap: 40px;
+    }
+  }
+}

@@ -1,0 +1,331 @@
+@import '/src/styles/mixins.scss';
+
+.packages-card {
+  width: 100%;
+  background: linear-gradient(180deg,hsla(0,0%,100%,.09) 10%,hsla(0,0%,100%,.015));
+
+  @include media-breakpoint-up(xxxl) {
+    max-width: 792px;
+    padding: 40px;
+    border-radius: 30px;
+  }
+
+  @include media-breakpoint-between(lg, xxxl) {
+    max-width: 620px;
+    padding: 30px 30px 40px;
+    border-radius: 22px;
+  }
+
+  @include media-breakpoint-between(sm, lg) {
+    padding: 30px 30px 40px;
+    border-radius: 22px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 20px 20px 25px;
+    border-radius: 18px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+
+  &__name {
+    font-weight: 500;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+      line-height: 35px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 20px;
+      line-height: 27px;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__name {
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 15px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__price {
+    font-weight: 600;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 40px;
+      line-height: 45px;
+      margin-bottom: 15px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 30px;
+      line-height: 33.9px;
+      margin-bottom: 15px;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 10px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 18px;
+      line-height: 20.7px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description-list {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(xxxl) {
+      padding-left: 30px;
+      margin-bottom: 40px;
+      gap: 8px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      padding-left: 24px;
+      margin-bottom: 30px;
+      gap: 3px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      padding-left: 21px;
+      margin-bottom: 30px;
+      gap: 3px;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      padding-left: 20px;
+      margin-bottom: 25px;
+      gap: 3px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 14px;
+      margin-bottom: 20px;
+      gap: 3px;
+    }
+  }
+
+  &__description-item {
+    font-weight: 500;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+      line-height: 35px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 20px;
+      line-height: 27px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 12px;
+      line-height: 16.2px;
+    }
+  }
+
+  &__benefit {
+    width: max-content;
+    border-radius: 40px;
+    font-weight: 500;
+
+    @include media-breakpoint-up(xxxl) {
+      margin-bottom: 20px;
+      padding: 4px 30px;
+      font-size: 26px;
+      line-height: 35px;
+      border: 2px solid #fff;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      margin-bottom: 28px;
+      padding: 4px 25px;
+      font-size: 20px;
+      line-height: 27px;
+      border: 2px solid #fff;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      margin-bottom: 20px;
+      padding: 4px 20px;
+      font-size: 16px;
+      line-height: 20px;
+      border: 2px solid #fff;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 10px;
+      padding: 3px 14px;
+      font-size: 12px;
+      line-height: 16.2px;
+      border: 1px solid #fff;
+    }
+  }
+
+  &__workout-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include media-breakpoint-up(lg) {
+      gap: 10px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      gap: 6px;
+    }
+  }
+
+  &__workout-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #37393D;
+    background-color: #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      font-size: 38px;
+      line-height: 46.32px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+      font-size: 30px;
+      line-height: 33.9px;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &--last {
+      position: relative;
+      background-color: #294AE7;
+      background-image: url('/images/gift.webp');
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include media-breakpoint-up(xxxl) {
+        width: 70px;
+        height: 70px;
+        border-radius: 18px;
+        background-size: 32px;
+      }
+  
+      @include media-breakpoint-between(lg, xxxl) {
+        width: 54px;
+        height: 54px;
+        border-radius: 12px;
+        background-size: 20px;
+      }
+
+      @include media-breakpoint-between(sm, lg) {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background-size: 15px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+        background-size: 14px;
+      }
+    }
+
+    &--last > &-factor {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%) translateX(70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: 500;
+      color: #fff;
+      background: linear-gradient(90deg, #353A40 0%,#292C31 100%);
+
+      @include media-breakpoint-up(xxxl) {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+        line-height: 35px;
+      }
+  
+      @include media-breakpoint-between(lg, xxxl) {
+        width: 37px;
+        height: 37px;
+        font-size: 20px;
+        line-height: 27px;
+      }
+
+      @include media-breakpoint-between(sm, lg) {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}

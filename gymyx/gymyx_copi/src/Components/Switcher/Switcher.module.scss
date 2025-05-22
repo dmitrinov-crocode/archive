@@ -1,0 +1,50 @@
+@import '@/styles/mixins.scss';
+
+.switcher {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    font-weight: 600;
+    border: none;
+    color: #fff;
+    background: #37393D;
+    transition: 0.3s;
+    cursor: pointer;
+
+    @include media-breakpoint-up(xxxl) {
+      min-width: 211px;
+      padding: 10px 31px;
+      font-size: 22px;
+      line-height: 26.82px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      min-width: 145px;
+      padding: 7px 19px 9px;
+      font-size: 16px;
+      line-height: 19.5px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      min-width: 100px;
+      padding: 5px 10px 7px;
+      font-size: 12px;
+      line-height: 14.66px;
+    }
+
+    &--left {
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+    }
+
+    &--right {
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
+
+    &--active {
+      background: #294AE7;
+    }
+  }
+}

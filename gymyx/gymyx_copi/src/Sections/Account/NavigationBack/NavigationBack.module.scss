@@ -1,0 +1,75 @@
+@import '@/styles/mixins.scss';
+
+.navigation-back {
+  &__btn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 10px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      margin-bottom: 12px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__btn-icon {
+    display: flex;
+
+    @include media-breakpoint-down(md) {
+      width: 8px;
+      height: 10px;
+      margin-right: 5px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      width: 10px;
+      height: 15px;
+      margin-right: 5px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      width: 7px;
+      height: 13px;
+      margin-right: 4px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      width: 15px;
+      height: 18px;
+      margin-right: 10px;
+    }
+
+    img {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__btn-text {
+    color: #fff;
+    font-weight: 600;
+
+    @include media-breakpoint-down(md) {
+      font-size: 12px;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      font-size: 16px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 22px;
+    }
+  }
+}

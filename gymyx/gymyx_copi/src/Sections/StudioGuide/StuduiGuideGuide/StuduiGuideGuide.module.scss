@@ -1,0 +1,21 @@
+@import '@/styles/mixins.scss';
+
+.studui-guide-guide {
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-up(xxxl) {
+    padding-top: 40px;
+    gap: 116px;
+  }
+
+  @include media-breakpoint-between(lg, xxxl) {
+    padding-top: 30px;
+    gap: 42px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding-top: 20px;
+    gap: 20px;
+  }
+}

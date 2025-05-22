@@ -1,0 +1,33 @@
+@import '@/styles/mixins.scss';
+
+.training-calendar {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.092) 10%, rgba(255, 255, 255, 0.041));
+
+  box-shadow: 0px 0px 21px 0px rgba(22, 23, 26, 0.6);
+  height: fit-content;
+
+  @include media-breakpoint-down(lg) {
+    padding: 16px 33px;
+    border-radius: 15px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    border-radius: 30px;
+  }
+
+  @include media-breakpoint-between(lg, xxl) {
+    padding: 25px 45px;
+  }
+
+  @include media-breakpoint-between(xxl, xxxl) {
+    padding: 32px 72px 52px 72px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    padding: 40px 90px 59px 90px;
+  }
+
+  &__calendar {
+    width: 100%;
+  }
+}

@@ -1,0 +1,474 @@
+@import '@/styles/mixins.scss';
+
+.gid-item-content {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 21px #16171A99;
+
+  @include media-breakpoint-up(xxxl) {
+    border-radius: 30px;
+    height: 607px;
+  }
+
+  @include media-breakpoint-between(lg, xxxl) {
+    border-radius: 22px;
+    aspect-ratio: 20/11;
+  }
+
+  @include media-breakpoint-down(lg) {
+    border-radius: 15px;
+    margin: 0 15px;
+  }
+
+  &__inner {
+    position: relative;
+    height: 100%;
+  }
+
+  &__video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @include media-breakpoint-down(lg) {
+      aspect-ratio: 20/11;
+    }
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__befor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30.56%, #294ae7 98.87%) transparent;
+    transition: 0.5s;
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 40px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      padding: 35px 30px 40px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      padding: 20px 30px 20px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      padding: 20px;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      padding: 16px 20px 14px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: 16px 20px 10px;
+    }
+
+    &--hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &__befor-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__btn-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #294AE7;
+    cursor: pointer;
+
+    @include media-breakpoint-up(xxxl) {
+      width: 120px;
+      height: 120px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      width: 85px;
+      height: 85px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      width: 65px;
+      height: 65px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      width: 65px;
+      height: 65px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__btn-play-icon {
+    display: inline-block;
+
+    @include media-breakpoint-up(xxxl) {
+      transform: translateX(6px) translateY(2px);
+      width: 65px;
+      height: 65px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      transform: translateX(6px) translateY(2px);
+      width: 46px;
+      height: 46px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      transform: translateX(6px) translateY(2px);
+      width: 32px;
+      height: 32px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      transform: translateX(4px) translateY(2px);
+      width: 32px;
+      height: 32px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      transform: translateX(4px) translateY(2px);
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__btn-lock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--blue-base-gradient, linear-gradient(90deg, #294ae7 0%, #0d2dc8 100%));
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    @include media-breakpoint-up(xxxl) {
+      border-radius: 50px;
+      padding: 10px 24px;
+      top: 40px;
+      left: 40px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      border-radius: 50px;
+      padding: 7px 18px;
+      top: 36px;
+      left: 30px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      border-radius: 50px;
+      padding: 7px 18px;
+      top: 15px;
+      left: 30px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      border-radius: 50px;
+      padding: 7px 18px;
+      top: 15px;
+      left: 15px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      top: 16px;
+      left: 15px;
+    }
+
+    &.active {
+      background: white;
+
+      img {
+        filter: invert(1);
+      }
+    }
+
+    &:not(.active) {
+      background: var(--blue-base-gradient, linear-gradient(90deg, #294ae7 0%, #0d2dc8 100%));
+      color: var(--white, #fff);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__btn-icon {
+    object-fit: contain;
+
+    @include media-breakpoint-up(xxxl) {
+      margin-right: 12px;
+      width: 20px;
+      height: 24px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      margin-right: 10px;
+      width: 11px;
+      height: 12px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 12px;
+      height: 15px;
+    }
+  }
+
+  &__btn-text {
+    font-weight: 600;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 22px;
+      line-height: 26.82px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 14px;
+      line-height: 17.8px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-up(xxxl) {
+      width: 70%;
+      height: 191px;
+      gap: 15px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      min-height: 100px;
+      gap: 20px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      min-height: 80px;
+      gap: 10px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      min-height: 90px;
+      gap: 5px;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      height: 36%;
+      gap: 5px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 80%;
+      height: 31%;
+      // gap: 5px;
+    }
+  }
+
+  &__title {
+    color: var(--white, #fff);
+    text-align: center;
+    font-weight: 600;
+    line-height: 117%;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 50px;
+      letter-spacing: -0.5px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      font-size: 38px;
+      letter-spacing: -0.5px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      font-size: 28px;
+      letter-spacing: -0.5px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 18px;
+      letter-spacing: -0.18px;
+    }
+  }
+
+  &__time {
+    color: var(--white, #fff);
+    font-weight: 600;
+    line-height: 113%;
+    position: absolute;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 40px;
+      bottom: 40px;
+      right: 33px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      font-size: 24px;
+      bottom: 40px;
+      right: 23px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      font-size: 24px;
+      bottom: 20px;
+      right: 30px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 18px;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+      bottom: 16px;
+      right: 16px;
+    }
+  }
+
+  &__status {
+    color: var(--white, #fff);
+    text-align: center;
+    font-weight: 500;
+    line-height: 135%;
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-up(xxxl) {
+      gap: 10px;
+      padding: 5px 30px;
+      border-radius: 41px;
+      border: 2px solid var(--white, #fff);
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      gap: 10px;
+      padding: 3px 15px;
+      border-radius: 30px;
+      border: 2px solid var(--white, #fff);
+    }
+
+    @include media-breakpoint-between(lg, xxl) {
+      gap: 10px;
+      padding: 3px 12px;
+      border-radius: 30px;
+      border: 1px solid var(--white, #fff);
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      padding: 4px;
+      border: 1px solid var(--white, #fff);
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__status-icon {
+    position: relative;
+    display: flex;
+
+    @include media-breakpoint-up(xxxl) {
+      width: 20px;
+      height: 20px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      width: 14px;
+      height: 13px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 10px;
+      height: 9px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  &__status-text {
+    color: var(--white, #fff);
+    text-align: center;
+    font-weight: 500;
+    line-height: 135%;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      font-size: 18px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      font-size: 16px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 14px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+}

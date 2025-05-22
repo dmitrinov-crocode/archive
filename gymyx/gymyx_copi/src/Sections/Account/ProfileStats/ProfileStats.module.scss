@@ -1,0 +1,86 @@
+@import '@/styles/mixins.scss';
+
+.profile-stats {
+  &__wrapper {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.092) 10%, rgba(255, 255, 255, 0.041));
+
+    @include media-breakpoint-down(lg) {
+      padding: 18px;
+      padding-right: 0;
+      border-radius: 15px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      padding: 30px;
+      border-radius: 22px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 40px;
+      border-radius: 30px;
+    }
+  }
+
+  &__list {
+    @include media-breakpoint-down(lg) {
+      margin-top: 20px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      margin-top: 30px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      margin-top: 40px;
+    }
+
+    cursor: grab;
+  }
+
+  &__list-wrapper {
+    > div > div:not(div:last-of-type) {
+      @include media-breakpoint-down(md) {
+        width: 45px;
+        padding-right: 20px;
+      }
+
+      @include media-breakpoint-between(md, lg) {
+        width: 65px;
+      }
+
+      @include media-breakpoint-between(lg, xl) {
+        width: 80px;
+      }
+
+      @include media-breakpoint-between(xl, xxl) {
+        width: 60px;
+      }
+
+      @include media-breakpoint-between(xxl, xxxl) {
+        width: 42px;
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        width: 76px;
+      }
+    }
+
+    > div > div:last-of-type {
+      @include media-breakpoint-down(md) {
+        width: fit-content;
+        padding-right: 20px;
+      }
+
+      @include media-breakpoint-between(md, xxxl) {
+        width: 72px;
+      }
+      @include media-breakpoint-up(xxxl) {
+        width: 100px;
+      }
+    }
+  }
+}
+
+.swiper-container {
+  background-color: red;
+}

@@ -1,0 +1,100 @@
+@import '@/styles/mixins.scss';
+
+.account-checkbox {
+  display: grid;
+  cursor: pointer;
+  width: 100%;
+
+  @include media-breakpoint-down(md) {
+    grid-template-columns: 12px auto;
+  }
+
+  @include media-breakpoint-between(md, xxxl) {
+    grid-template-columns: 16px auto;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    grid-template-columns: 24px auto;
+  }
+
+  &__icon {
+    position: relative;
+    border-radius: 50%;
+
+    @include media-breakpoint-down(md) {
+      min-width: 12px;
+      min-height: 12px;
+      width: 12px;
+      height: 12px;
+      margin-top: 2px;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      min-height: 16px;
+      min-width: 16px;
+      width: 16px;
+      height: 16px;
+      margin-top: 5px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      border: 1px solid #fff;
+    }
+
+    @include media-breakpoint-up(lg) {
+      border: 2px solid #fff;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      min-height: 24px;
+      min-height: 24px;
+      width: 24px;
+      height: 24px;
+      margin-top: 5px;
+    }
+
+    &.active {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        height: 60%;
+        border-radius: 50%;
+        background: var(--black, #fff);
+      }
+    }
+  }
+
+  &__text {
+    color: var(--white, #fff);
+    font-weight: 500;
+    line-height: 135%;
+
+    @include media-breakpoint-down(md) {
+      font-size: 12px;
+      padding-left: 10px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      font-size: 16px;
+      padding-left: 15px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 20px;
+      padding-left: 15px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+      padding-left: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration-line: underline;
+  }
+}

@@ -1,0 +1,99 @@
+@import '@/styles/mixins.scss';
+
+.mobile-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  @include media-breakpoint-up(xl) {
+    display: none;
+  }
+
+  &__wrapper {
+    border-radius: 30px 30px 0px 0px;
+    background: var(--black, #212428);
+    box-shadow: 0px 0px 21px 0px rgba(22, 23, 26, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 18px 30px 18px;
+    overflow: hidden;
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    &:not(.active) {
+      img {
+        filter: invert(0.3);
+        -webkit-filter: invert(0.3);
+      }
+
+      p {
+        color: var(--white-transperent-2, rgba(255, 255, 255, 0.4));
+      }
+    }
+
+    &.active {
+      img {
+        filter: invert(1);
+        -webkit-filter: invert(1);
+      }
+
+      p {
+        color: var(--white, #fff);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      padding: 12px 0;
+    }
+  }
+
+  & a[href='/lk/training'] .mobile-bar__btn-icon {
+    position: relative;
+    width: 33px;
+    height: 26px;
+    display: flex;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &__btn-icon {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    display: flex;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &__btn-title {
+    text-align: center;
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 135%;
+    margin-top: 5px;
+  }
+}

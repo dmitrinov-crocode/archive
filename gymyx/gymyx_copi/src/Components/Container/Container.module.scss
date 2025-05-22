@@ -1,0 +1,167 @@
+@import '@/styles/mixins.scss';
+
+.container,
+.containerM,
+.containerXL,
+.containerXLF {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  max-width: calc(1440px + var(--spacing-container) * 2);
+  padding-right: var(--spacing-container);
+  padding-left: var(--spacing-container);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  @include media-breakpoint-down(xl) {
+    --spacing-container: 30px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    --spacing-container: 50px;
+  }
+}
+
+.containerM {
+  @include media-breakpoint-down(xl) {
+    --spacing-container: 30px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    --spacing-container: 80px;
+  }
+}
+
+.containerXL {
+  @include media-breakpoint-down(xl) {
+    --spacing-container: 26px;
+  }
+
+  @include media-breakpoint-between(xl, xxxl) {
+    --spacing-container: 56px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    --spacing-container: 49px;
+  }
+}
+
+.containerXLF {
+  @include media-breakpoint-down(xl) {
+    --spacing-container: 26px;
+  }
+
+  @include media-breakpoint-between(xl, xxxl) {
+    --spacing-container: 28px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    --spacing-container: 24px;
+  }
+}
+
+.container {
+  @include media-breakpoint-between(sm, md) {
+    max-width: $breakpoints-sm;
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    max-width: $breakpoints-md;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    max-width: $breakpoints-lg;
+  }
+
+  @include media-breakpoint-between(xl, xxl) {
+    max-width: $breakpoints-xl;
+  }
+
+  @include media-breakpoint-between(xxl, xxxl) {
+    max-width: $breakpoints-xxl;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    max-width: $breakpoints-xxxl;
+  }
+}
+
+.containerM {
+  @include media-breakpoint-between(sm, md) {
+    max-width: $breakpoints-sm;
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    max-width: $breakpoints-md;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    max-width: $breakpoints-lg;
+  }
+
+  @include media-breakpoint-between(xl, xxl) {
+    max-width: $breakpoints-xl;
+  }
+
+  @include media-breakpoint-between(xxl, xxxl) {
+    max-width: 1070px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    max-width: 1374px;
+  }
+}
+
+.containerXL {
+  @include media-breakpoint-between(sm, md) {
+    max-width: $breakpoints-sm;
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    max-width: $breakpoints-md;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    max-width: $breakpoints-lg;
+  }
+
+  @include media-breakpoint-between(xl, xxl) {
+    max-width: $breakpoints-xl + 100;
+  }
+
+  @include media-breakpoint-between(xxl, xxxl) {
+    max-width: $breakpoints-xxl + 100;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    max-width: $breakpoints-xxxl + 100;
+  }
+}
+
+.containerXLF {
+  @include media-breakpoint-between(sm, md) {
+    max-width: $breakpoints-sm;
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    max-width: $breakpoints-md;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    max-width: $breakpoints-lg;
+  }
+
+  @include media-breakpoint-between(xl, xxl) {
+    max-width: $breakpoints-xl + 100;
+  }
+
+  @include media-breakpoint-between(xxl, xxxl) {
+    max-width: $breakpoints-xxl + 100;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    max-width: $breakpoints-xxxl + 120;
+  }
+}

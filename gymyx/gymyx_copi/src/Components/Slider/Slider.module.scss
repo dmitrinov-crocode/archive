@@ -1,0 +1,27 @@
+@import '@/styles/mixins.scss';
+
+.slider {
+  overflow: unset;
+
+  @include media-breakpoint-up(lg) {
+    // width: 120%;
+
+    // > div > div:last-child {
+    //   margin-right: 20%;
+    // }
+  }
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 40px;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 68px;
+    }
+  }
+}

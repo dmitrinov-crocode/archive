@@ -1,0 +1,40 @@
+@import "@/styles/mixins.scss";
+
+.booking-time-pricing {
+  position: relative;
+
+  // @include media-breakpoint-down(lg) {
+  //   margin-top: 20px;
+  // }
+
+  // @include media-breakpoint-between(lg, xxl) {
+  //   margin-top: 28px;
+  // }
+
+  // @include media-breakpoint-up(xxl) {
+  //   margin-top: 36px;
+  // }
+
+  &__wrapper {
+    background: linear-gradient(180deg,rgba(255, 255, 255, 0.082) 10%,rgba(255, 255, 255, 0.031));
+    box-shadow: 0px 0px 21px 0px rgba(22, 23, 26, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-breakpoint-down(lg) {
+      border-radius: 15px;
+      padding: 16px;
+    }
+
+    @include media-breakpoint-between(lg, xxl) {
+      border-radius: 20px;
+      padding: 25px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      padding: 31px 47px 53px 47px;
+      border-radius: 30px;
+    }
+  }
+}

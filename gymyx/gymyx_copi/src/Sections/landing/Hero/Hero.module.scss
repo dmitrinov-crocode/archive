@@ -1,0 +1,329 @@
+@import '@/styles/mixins.scss';
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  background: linear-gradient(107.59deg, #294ae7 0%, #0d2dc8 100%);
+
+  @include media-breakpoint-down(lg) {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(70, 43, 232, 0) 76%, #212428 100%);
+    }
+  }
+
+  &__billet {
+    position: absolute;
+    z-index: 2;
+    animation: rotate 10s linear infinite;
+    overflow: hidden;
+    // aspect-ratio: 1/1;
+
+    @include media-breakpoint-down(md) {
+      max-width: 82px;
+      left: 37px;
+      bottom: 270px;
+    }
+
+    @media (max-width: 600px) and (min-height: 900px) and (max-height: 934px) {
+      max-width: 82px;
+      left: 37px;
+      bottom: 320px;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      max-width: 102px;
+      left: 43px;
+      bottom: 300px;
+    }
+
+    @include media-breakpoint-between(lg, xxl) {
+      max-width: 138px;
+      top: 152px;
+      right: 65px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      max-width: 158px;
+      top: 172px;
+      right: 65px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      max-width: 189px;
+      // max-height: 185px;
+      top: 186px;
+      right: 80px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    &::after {
+      @include media-breakpoint-down(md) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &__content-wrapper {
+    width: 100%;
+
+    @include media-breakpoint-down(lg) {
+      height: 100%;
+      z-index: 2;
+      position: relative;
+    }
+
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      bottom: 12%;
+    }
+
+    @media (min-width: 1500px) and (min-height: 880px) and (max-height: 1040px) {
+      bottom: 10%;
+    }
+
+    @media (min-width: 1300px) and (min-height: 680px) and (max-height: 810px) {
+      bottom: 5%;
+    }
+
+    > div {
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    @include media-breakpoint-down(md) {
+      max-width: 320px;
+      justify-content: flex-end;
+      padding: 60px 0;
+      margin: 0 auto;
+      height: 100%;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      max-width: 630px;
+      justify-content: flex-end;
+      padding: 60px 0;
+      height: 100%;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      max-width: 630px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      max-width: 770px;
+    }
+
+    @media (min-width: 1760px) and (min-height: 800px) and (max-height: 1040px) {
+      max-width: 930px;
+    }
+  }
+
+  &__title {
+    color: var(--white, #fff);
+    margin-bottom: 20px;
+    line-height: 117%;
+    font-weight: 600;
+
+    @include media-breakpoint-down(md) {
+      text-align: center;
+      font-size: 28px;
+      letter-spacing: -0.28px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      font-size: 38px;
+      line-height: 117%;
+      letter-spacing: -0.5px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 38px;
+      line-height: 44px;
+      letter-spacing: -0.01em;
+      max-width: 467px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 50px;
+      letter-spacing: -0.5px;
+    }
+
+    @media (min-height: 800px) and (max-height: 1040px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__subtitle {
+    color: var(--white, #fff);
+    font-weight: 500;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 24px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 30px;
+      margin-bottom: 35px;
+    }
+
+    @media (min-height: 800px) and (max-height: 1040px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__price {
+    color: var(--white, #fff);
+    font-weight: 500;
+
+    @include media-breakpoint-down(md) {
+      text-align: center;
+      font-size: 16px;
+      line-height: 112%;
+      letter-spacing: -0.16px;
+      margin-bottom: 10px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      font-size: 22px;
+      margin-right: 20px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 24px;
+      line-height: 29px;
+      margin-right: 30px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 30px;
+      margin-right: 40px;
+    }
+  }
+
+  &__price-value {
+    color: var(--white, #fff);
+    font-weight: 600;
+
+    @include media-breakpoint-down(md) {
+      font-size: 30px;
+      line-height: 110%;
+      letter-spacing: -0.3px;
+      margin-left: 10px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      font-size: 46px;
+      line-height: 110%;
+      letter-spacing: -0.7px;
+      margin-left: 20px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 52px;
+      line-height: 61px;
+      letter-spacing: -0.01em;
+      margin-left: 20px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 70px;
+      line-height: 110%;
+      letter-spacing: -0.7px;
+      margin-left: 20px;
+    }
+  }
+
+  &__price-prefix {
+    color: var(--white, #fff);
+    font-weight: 600;
+    line-height: 117%;
+
+    @include media-breakpoint-down(md) {
+      font-size: 24px;
+      letter-spacing: -0.24px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      font-size: 30px;
+      letter-spacing: -0.5px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 38px;
+      line-height: 57px;
+      letter-spacing: -0.01em;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 50px;
+      letter-spacing: -0.5px;
+    }
+  }
+}

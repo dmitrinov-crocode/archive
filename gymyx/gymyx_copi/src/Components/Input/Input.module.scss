@@ -1,0 +1,60 @@
+@import '@/styles/mixins.scss';
+
+.input {
+  background: var(--white-transperent, rgba(255, 255, 255, 0.1));
+  width: 100%;
+
+  @include media-breakpoint-down(lg) {
+    padding: 11px 20px;
+    border-radius: 25px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    border-radius: 50px;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    padding: 11px 40px;
+  }
+
+  @include media-breakpoint-between(lg, xxxl) {
+    padding: 18px 30px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    padding: 18px 40px;
+  }
+
+  &__field {
+    display: flex;
+    font-weight: 500;
+    line-height: 135%;
+    border: none;
+    background: transparent;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--white-transperent-2, rgba(255, 255, 255, 0.4));
+    }
+
+    &:not(:placeholder-shown) {
+      color: var(--white, #fff);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 20px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+    }
+  }
+}

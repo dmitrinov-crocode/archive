@@ -1,0 +1,72 @@
+@import '@/styles/mixins.scss';
+
+.prices-list {
+  display: grid;
+
+  @include media-breakpoint-down(md) {
+    margin-top: 30px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-breakpoint-between(sm, xl) {
+    padding: 8%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-breakpoint-between(xl, xxxl) {
+    padding: 0 21%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    padding: 0 22%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__col {
+    &:first-of-type {
+      @include media-breakpoint-down(md) {
+        margin-top: 25px;
+      }
+
+      @include media-breakpoint-between(md, xl) {
+        margin-top: 60px;
+      }
+
+      @include media-breakpoint-between(xl, xxxl) {
+        margin-top: 20px;
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        margin-top: 15px;
+      }
+    }
+
+    &:last-of-type {
+      @include media-breakpoint-down(md) {
+        margin-top: 120px;
+      }
+
+      @include media-breakpoint-between(md, xl) {
+        margin-top: 175px;
+      }
+
+      @include media-breakpoint-between(xl, xxxl) {
+        margin-top: 172px;
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        margin-top: 230px;
+      }
+    }
+
+    &-right {
+    }
+  }
+
+  &__time-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

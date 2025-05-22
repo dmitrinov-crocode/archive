@@ -1,0 +1,34 @@
+@import "@/styles/mixins.scss";
+
+.profile-heading {
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+    }
+
+    @include media-breakpoint-up(lg) {
+      align-items: flex-start;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    gap: 30px;
+
+    @include media-breakpoint-down(lg) {
+      justify-content: space-between;
+      margin-top: 20px;
+      display: none;
+    }
+
+    @include media-breakpoint-up(lg) {
+      align-items: flex-end;
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import '@/styles/mixins.scss';
+
+.prices-list-item {
+  &__price-value {
+    display: flex;
+    gap: 1px;
+    align-items: flex-end;
+    white-space: nowrap;
+
+    &:not(:last-child) {
+      @include media-breakpoint-down(md) {
+        margin-bottom: 140px;
+      }
+
+      @include media-breakpoint-between(md, xl) {
+        margin-bottom: 190px;
+      }
+
+      @include media-breakpoint-between(xl, xxxl) {
+        margin-bottom: 195px;
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        margin-bottom: 230px;
+      }
+    }
+  }
+
+  &__price-value-amount {
+    color: var(--white, #fff);
+    text-align: right;
+    font-weight: 600;
+    line-height: 107.3%;
+
+    @include media-breakpoint-down(md) {
+      font-size: 30px;
+      letter-spacing: -0.3px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      font-size: 50px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 75px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 100px;
+    }
+  }
+
+  &__price-value-prefix {
+    color: var(--white, #fff);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+
+    @include media-breakpoint-down(md) {
+      font-size: 18px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      font-size: 32px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 38px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 50px;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+@import '@/styles/mixins.scss';
+
+.select-tags {
+  @include media-breakpoint-down(lg) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: #37393D;
+    transition: 0.3s;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 70px;
+      background: #37393D;
+      box-shadow: 0 0 10px 15px #37393D;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+
+    &--hidden {
+      @include media-breakpoint-down(lg) {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  
+    @include media-breakpoint-up(xxxl) {
+      column-gap: 30px;
+      row-gap: 15px;
+      flex-wrap: wrap;
+    }
+  
+    @include media-breakpoint-between(lg, xxxl) {
+      column-gap: 25px;
+      row-gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    @include media-breakpoint-down(lg) {
+      gap: 15px;
+      overflow: auto;
+      padding: 18px 30px 98px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    background: #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      gap: 15px;
+      padding: 10px 24px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      gap: 12px;
+      padding: 8px 20px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      gap: 8px;
+      padding: 5.5px 13px;
+    }
+  }
+  
+  &__name {
+    font-weight: 600;
+    color: #212428;
+    text-wrap: nowrap;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 22px;
+      line-height: 26.82px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 16px;
+      line-height: 19.5px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+      line-height: 14.63px;
+    }
+  }
+  
+  &__delete-icon {
+    border: none;
+    color: #212428;
+    background: transparent;
+    cursor: pointer;
+
+    @include media-breakpoint-up(xxxl) {
+      width: 15px;
+      height: 15px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      width: 12.5px;
+      height: 12.5px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 9px;
+    }
+  }
+}
+
+

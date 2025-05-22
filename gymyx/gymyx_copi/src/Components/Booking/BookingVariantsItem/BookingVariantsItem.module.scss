@@ -1,0 +1,270 @@
+@import '@/styles/mixins.scss';
+
+.booking-variants-item {
+  position: relative;
+  width: 100%;
+  box-shadow: 0px 0px 21px 0px rgba(22, 23, 26, 0.6);
+  cursor: pointer;
+
+  @include media-breakpoint-down(lg) {
+    height: 165px;
+    border-radius: 15px;
+    padding: 18px;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    height: 265px;
+    padding: 25px;
+    border-radius: 22.5px;
+  }
+
+  @include media-breakpoint-between(xl, xxxl) {
+    height: 320px;
+    padding: 30px;
+    border-radius: 22.5px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    height: 390px;
+    border-radius: 30px;
+    padding: 40px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 85%;
+  }
+
+  &.white {
+    background: var(--white, #fff);
+
+    .booking-variants-item__title {
+      color: var(--black, #212428);
+    }
+
+    .booking-variants-item__tag {
+      color: var(--black, #212428);
+
+      @include media-breakpoint-down(lg) {
+        border: 1px solid var(--black, #212428);
+      }
+
+      @include media-breakpoint-up(lg) {
+        border: 2px solid var(--black, #212428);
+      }
+    }
+
+    .booking-variants-item__img {
+      @include media-breakpoint-down(lg) {
+        margin-right: 25px;
+        width: 90px;
+      }
+
+      @include media-breakpoint-between(lg, xxl) {
+        width: 120px;
+      }
+
+      @include media-breakpoint-between(xxl, xxxl) {
+        width: 160px;
+      }
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      height: 390px;
+    }
+  }
+
+  &.black {
+    background: var(--white-transperent, #ffffff1a);
+
+    .booking-variants-item__title  {
+      color: var(--white, #fff);
+    }
+
+    .booking-variants-item__tag {
+      color: var(--white, #fff);
+
+      @include media-breakpoint-down(lg) {
+        border: 1px solid var(--white, #fff);
+      }
+
+      @include media-breakpoint-up(lg) {
+        border: 2px solid var(--white, #fff);
+      }
+    }
+
+    .booking-variants-item__img {
+      @include media-breakpoint-down(lg) {
+        width: 120px;
+      }
+
+      @include media-breakpoint-between(lg, xxl) {
+        width: 150px;
+      }
+
+      @include media-breakpoint-between(xxl, xxxl) {
+        width: 210px;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 117%;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 24px;
+      letter-spacing: -0.24px;
+    }
+
+    @include media-breakpoint-between(lg, xxl) {
+      font-size: 38px;
+      letter-spacing: -0.24px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      font-size: 38px;
+      letter-spacing: -0.5px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 50px;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  &__tag {
+    text-align: center;
+    font-weight: 500;
+    line-height: 135%;
+    width: max-content;
+
+    @include media-breakpoint-down(lg) {
+      padding: 2px 12px;
+      font-size: 12px;
+      border-radius: 18px;
+    }
+
+    @include media-breakpoint-between(lg, xxl) {
+      padding: 3px 20px;
+      font-size: 20px;
+      border-radius: 25px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      padding: 4px 25px;
+      font-size: 20px;
+      border-radius: 41px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 4px 30px;
+      font-size: 26px;
+      border-radius: 41px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    object-fit: contain;
+    transform: translateY(-50%) translateX(-40px);
+    max-width: 230px;
+  }
+}
+
+.discount {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  box-shadow: 0 0 21px #16171a99;
+  background: linear-gradient(270deg, rgba(13,45,200,1) 25%, rgba(41,74,231,1) 100%);
+
+  @include media-breakpoint-up(xxxl) {
+    transform: rotate(3.52deg) translateX(15%) translateY(-15%);
+    padding: 30px 55px;
+    border-radius: 30px;
+  }
+
+  @include media-breakpoint-between(xl, xxxl) {
+    transform: rotate(4deg) translateX(15%) translateY(-15%);
+    padding: 22px 49px;
+    border-radius: 24px;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    transform: rotate(4deg) translateX(15%) translateY(-50%);
+    padding: 22px 40px;
+    border-radius: 24px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    transform: rotate(4deg) translateX(15%) translateY(-50%);
+    padding: 16px 26px;
+    border-radius: 18px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+
+  &__text {
+    font-weight: 500;
+    color: inherit;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 30px;
+      line-height: 36.5px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 20px;
+      line-height: 27px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__sale {
+    font-weight: 600;
+    color: inherit;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 50px;
+      line-height: 58.5px;
+      letter-spacing: -1px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 38px;
+      line-height: 44.46px;
+      letter-spacing: -1px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 30px;
+      line-height: 34.46px;
+      letter-spacing: -1px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 24px;
+      line-height: 30px;
+      letter-spacing: -1px;
+    }
+  }
+}

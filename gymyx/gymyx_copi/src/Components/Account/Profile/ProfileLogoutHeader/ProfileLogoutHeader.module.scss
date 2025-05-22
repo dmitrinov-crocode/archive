@@ -1,0 +1,12 @@
+@import "@/styles/mixins.scss";
+
+.profile-logout-header {
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

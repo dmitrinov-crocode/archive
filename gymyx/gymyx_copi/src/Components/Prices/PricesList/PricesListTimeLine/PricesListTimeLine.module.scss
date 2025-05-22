@@ -1,0 +1,109 @@
+@import '@/styles/mixins.scss';
+
+.prices-list-timeline {
+  &__time-line-item {
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+      padding-bottom: 75px;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      padding-bottom: 117px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      padding-bottom: 145px;
+    }
+
+    &:first-of-type {
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        width: 2px;
+        background: linear-gradient(0deg, #fff -200%, transparent 100%);
+        z-index: -1;
+        transform: translateX(-50%);
+
+        @include media-breakpoint-down(md) {
+          height: 25px;
+        }
+
+        @include media-breakpoint-up(md) {
+          height: 50px;
+        }
+      }
+    }
+
+    &:last-of-type {
+      @include media-breakpoint-down(md) {
+        padding-bottom: 25px;
+      }
+
+      @include media-breakpoint-up(md) {
+        padding-bottom: 50px;
+      }
+
+      &::after {
+        background: linear-gradient(180deg, #fff -200%, transparent 100%);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: #fff;
+      z-index: -1;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__time-line-item-dot {
+    position: relative;
+    background: var(--blue-base, #294ae7);
+    border-radius: 50%;
+
+    @include media-breakpoint-down(md) {
+      width: 10px;
+      height: 10px;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      width: 19px;
+      height: 19px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__time-line-item-value {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(100% - 20px * -1);
+    color: var(--white, #fff);
+    font-weight: 500;
+    line-height: 135%;
+
+    @include media-breakpoint-down(md) {
+      font-size: 12px;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      font-size: 20px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+    }
+  }
+}

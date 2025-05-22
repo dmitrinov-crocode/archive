@@ -1,0 +1,105 @@
+@import '@/styles/mixins.scss';
+
+.studio-guide-helper {
+  position: relative;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 600;
+    color: #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 50px;
+      line-height: 58.5px;
+      text-align: center;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 38px;
+      line-height: 44.46px;
+      text-align: center;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 38px;
+      line-height: 44.46px;
+      text-align: center;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 24px;
+      line-height: 28.08px;
+    }
+  }
+
+  &__items {
+    opacity: 0.2;
+    transition: 0.3s 0.3s;
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 0 40px;
+      margin: 0 -30px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      padding: 0 37px;
+      margin: 0 -30px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin: 0 -30px;
+    }
+
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 90%;
+      background: #212428;
+      box-shadow: 0 0 18px 30px #212428;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      &::before {
+        left: 30px;
+      }
+  
+      &::after {
+        right: 30px;
+      }
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      &::before {
+        left: 30px;
+      }
+  
+      &::after {
+        right: 30px;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      &::before {
+        left: 0;
+      }
+  
+      &::after {
+        right: 0;
+      }
+    }
+
+    &--active {
+      opacity: 1;
+    }
+  }
+}

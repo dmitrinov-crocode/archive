@@ -1,0 +1,31 @@
+@import '@/styles/mixins.scss';
+
+.gide-page {
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-up(xxxl) {
+    gap: 40px;
+  }
+
+  @include media-breakpoint-between(lg, xxxl) {
+    gap: 30px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    gap: 20px;
+  }
+
+  &--second {
+    @include media-breakpoint-down(lg) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__slide {
+    // display: flex;
+    // flex-direction: column;
+    // height: 100vh;
+    // flex: 1 0 auto;
+  }
+}

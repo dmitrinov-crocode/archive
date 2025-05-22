@@ -1,0 +1,40 @@
+@import '@/styles/mixins.scss';
+
+.border-label {
+  border-radius: 41px;
+  border: 2px solid var(--white, #fff);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  max-width: max-content;
+
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+
+    @include media-breakpoint-down(md) {
+      font-size: 12px;
+      padding: 2px 12px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      font-size: 18px;
+      padding: 4px 15px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 20px;
+      padding: 4px 25px 8px 25px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+      padding: 8px 30px;
+    }
+  }
+}

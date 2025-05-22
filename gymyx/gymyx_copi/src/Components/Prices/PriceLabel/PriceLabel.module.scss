@@ -1,0 +1,90 @@
+@import '@/styles/mixins.scss';
+
+.price-label {
+  background: var(--blue-base-gradient, linear-gradient(90deg, #294ae7 0%, #0d2dc8 100%));
+  box-shadow: 0px 0px 21px 0px rgba(22, 23, 26, 0.6);
+  width: fit-content;
+  position: absolute;
+
+  transform: rotate(4deg);
+
+  @include media-breakpoint-down(md) {
+    padding: 18px;
+    border-radius: 15px;
+    top: -65px;
+    right: 10px;
+  }
+
+  @include media-breakpoint-up(md) {
+    border-radius: 30px;
+  }
+
+  @include media-breakpoint-between(md, xxl) {
+    padding: 24px;
+    top: -75px;
+    right: 5px;
+  }
+
+  @include media-breakpoint-between(xxl, xxxl) {
+    padding: 24px;
+    top: -20px;
+    right: 25px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    padding: 30px 38px;
+    top: -20px;
+    right: 10px;
+  }
+
+  &__text {
+    color: var(--white, #fff);
+    font-weight: 500;
+    line-height: 135%;
+
+    @include media-breakpoint-down(md) {
+      font-size: 12px;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      font-size: 20px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  &__value {
+    color: var(--white, #fff);
+    font-weight: 600;
+    line-height: 117%;
+    letter-spacing: -0.5px;
+
+    @include media-breakpoint-down(md) {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      font-size: 30px;
+      margin-right: 15px;
+    }
+
+    @include media-breakpoint-between(lg, xxxl) {
+      font-size: 38px;
+      margin-right: 10px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 50px;
+      margin-right: 20px;
+    }
+  }
+}

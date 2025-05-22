@@ -1,0 +1,50 @@
+@import '@/styles/mixins.scss';
+
+.booking-time-variants-item {
+  color: var(--white, #fff);
+  text-align: center;
+  font-weight: 600;
+  background-color: var(--var-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  border: 0;
+
+  &.disabled {
+    background: gray;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  &.active {
+    background: #fff !important;
+    color: #37393d;
+  }
+
+  @include media-breakpoint-down(lg) {
+    font-size: 16px;
+    padding: 4px 12px;
+    border-radius: 24px;
+  }
+
+  @include media-breakpoint-between(lg, xxl) {
+    font-size: 28px;
+    padding: 6px 18px;
+    border-radius: 38px;
+  }
+
+  @include media-breakpoint-between(xxl, xxxl) {
+    font-size: 28px;
+    padding: 4px 18px;
+    border-radius: 57px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    font-size: 38px;
+    padding: 10px 24px;
+    border-radius: 57px;
+  }
+}

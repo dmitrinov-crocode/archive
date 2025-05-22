@@ -1,0 +1,77 @@
+@import "@/styles/mixins.scss";
+
+.booking-calendar-line-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 3px;
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  @include media-breakpoint-down(lg) {
+    border-radius: 7px;
+  }
+
+  @include media-breakpoint-between(lg, xxl) {
+    border-radius: 12px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    border-radius: 17px;
+  }
+
+  &:hover {
+    background: var(--white, #ffffff2f);
+  }
+
+  &.active {
+    background: var(--white, #fff);
+
+    p {
+      color: var(--dark-grey, #37393d);
+    }
+  }
+
+  &:not(.active) {
+    p {
+      color: var(--white, #fff);
+    }
+  }
+
+  &__value {
+    text-align: center;
+    font-weight: 600;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 16px;
+    }
+
+    @include media-breakpoint-between(lg, xxl) {
+      font-size: 26px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      font-size: 38px;
+    }
+  }
+
+  &__label {
+    text-align: center;
+    font-weight: 500;
+    line-height: 135%;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+    }
+
+    @include media-breakpoint-between(lg, xxl) {
+      font-size: 20px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      font-size: 26px;
+    }
+  }
+}

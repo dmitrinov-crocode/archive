@@ -1,0 +1,24 @@
+@import '@/styles/mixins.scss';
+
+.profile-block-title {
+  color: var(--white, #fff);
+  font-weight: 600;
+  line-height: 113%;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 18px;
+    letter-spacing: -0.18px;
+  }
+
+  @include media-breakpoint-between(lg, xxl) {
+    font-size: 28px;
+  }
+
+  @include media-breakpoint-between(xxl, xxxl) {
+    font-size: 30px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    font-size: 40px;
+  }
+}

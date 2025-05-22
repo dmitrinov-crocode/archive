@@ -1,0 +1,131 @@
+@import '/src/styles/mixins.scss';
+
+.packages-summary {
+  width: 100%;
+  height: max-content;
+  background: linear-gradient(180deg,hsla(0,0%,100%,.09) 10%,hsla(0,0%,100%,.015));
+
+  @include media-breakpoint-up(xxxl) {
+    max-width: 760px;
+    padding: 40px 49px 52px;
+    border-radius: 30px;
+  }
+
+  @include media-breakpoint-between(lg, xxxl) {
+    max-width: 620px;
+    padding: 28px 36px 42px;
+    border-radius: 22px;
+  }
+
+  @include media-breakpoint-between(sm, lg) {
+    padding: 28px 36px 42px;
+    border-radius: 22px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 20px 20px 25px;
+    border-radius: 18px;
+  }
+
+  &__inner {
+
+  }
+
+  &__shopping-list {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(xxxl) {
+      margin-bottom: 40px;
+    }
+  
+    @include media-breakpoint-between(lg, xxxl) {
+      margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      margin-bottom: 20px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-top: 2px solid #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 38px 0;
+    }
+  
+    @include media-breakpoint-between(lg, xxxl) {
+      padding: 38px 0 30px;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      padding: 25px 0 25px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: 22px 0 14px;
+    }
+  }
+
+  &__result-text,
+  &__result-price,
+  &__shopping-item {
+    font-weight: 600;
+    color: #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 40px;
+      line-height: 45.2px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      font-size: 30px;
+      line-height: 33.9px;
+    }
+  
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 28px;
+      line-height: 30px;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 18px;
+      line-height: 20.7px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(xxxl) {
+      gap: 24px;
+    }
+  
+    @include media-breakpoint-between(lg, xxxl) {
+      gap: 20px;
+    }
+
+    @include media-breakpoint-between(sm, lg) {
+      gap: 16px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      gap: 14px;
+    }
+  }
+}

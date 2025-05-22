@@ -1,0 +1,134 @@
+@import '@/styles/mixins.scss';
+
+.profile-textfied-block {
+  position: relative;
+
+  &__input {
+    font-weight: 500;
+    line-height: 135%;
+    resize: none;
+    border: none;
+    background: var(--white-transperent, rgba(255, 255, 255, 0.1));
+    width: 100%;
+    color: #fff;
+
+    @include media-breakpoint-up(xxxl) {
+      min-height: 122px;
+      border-radius: 25.752px;
+      padding: 20px 173px 45px 40px;
+      font-size: 26px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      min-height: 80px;
+      padding: 20px 130px 37px 30px;
+      border-radius: 25.75px;
+      font-size: 20px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      min-height: 80px;
+      border-radius: 20px;
+      padding: 15px 100px 25px 25px;
+      font-size: 20px;
+    }
+
+    @include media-breakpoint-down(md) {
+      overflow: hidden;
+      min-height: 45px;
+      padding: 8px 50px 12px 18px;
+      border-radius: 7px;
+      font-size: 12px; 
+    }
+
+    &:focus {
+      outline: none;
+
+      @include media-breakpoint-down(md) {
+        height: 300px;
+      }
+    }
+
+    &::placeholder {
+      color: #ffffff66;
+    }
+
+    &--disable {
+      color: gray;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(270deg, rgb(13, 45, 200) 25%, rgb(41, 74, 231) 100%);
+    box-shadow: 0px 0px 27px 30px rgb(22 23 26 / 8%);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #5b74e9;
+      transition: 0.3s ease;
+    }
+
+    &:active {
+      background: #8e9eed;
+      transition: 0.3s ease;
+    }
+
+    @include media-breakpoint-down(md) {
+      bottom: 11px;
+      right: 12px;
+      width: 30px;
+      height: 30px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      bottom: 20px;
+      right: 15px;
+      width: 50px;
+      height: 50px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      bottom: 15px;
+      right: 15px;
+      width: 65px;
+      height: 65px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      bottom: 21px;
+      right: 20px;
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  &__btn-icon {
+    @include media-breakpoint-down(md) {
+      width: 12px;
+      height: 11px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      width: 17px;
+      height: 18px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      width: 27px;
+      height: 24px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      width: 37px;
+      height: 32px;
+    }
+  }
+}

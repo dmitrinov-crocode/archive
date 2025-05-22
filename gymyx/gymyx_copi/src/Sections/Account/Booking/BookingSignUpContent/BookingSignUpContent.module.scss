@@ -1,0 +1,43 @@
+@import '@/styles/mixins.scss';
+
+.booking-signup-content {
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 20px;
+      flex-direction: column-reverse;
+    }
+
+    > *:first-child {
+      @include media-breakpoint-between(lg, xxxl) {
+        margin-right: 30px;
+        min-width: 620px;
+        max-width: 1214px;
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        min-width: 780px;
+        max-width: 1214px;
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__gym {
+    @include media-breakpoint-up(md) {
+      display: none !important;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-top: 20px !important;
+    }
+  }
+}

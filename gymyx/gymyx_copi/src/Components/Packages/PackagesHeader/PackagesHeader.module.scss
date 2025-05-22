@@ -1,0 +1,93 @@
+@import '/src/styles/mixins.scss';
+
+.package-header {
+  width: 100%;
+  @include media-breakpoint-up(xxxl) {
+    margin-bottom: 35px;
+  }
+
+  @include media-breakpoint-between(xl, xxxl) {
+    margin-bottom: 30px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: #37393d;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+     content: '';
+     position: absolute;
+     z-index: 2;
+     width: 0%;
+     height: 100%;
+     top: 0;
+     border-radius: inherit;
+     box-shadow: 0 0px 15px 20px #37393d;
+   }
+
+   &::before {
+     right: 0;
+   }
+
+   &::after {
+     left: 0;
+   }
+  }
+
+  &__inner {
+    overflow: auto;
+    &::-webkit-scrollbar { width: 0; height: 0;}
+    & { -ms-overflow-style: none; }
+    & { overflow: -moz-scrollbars-none; }
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-up(xxxl) {
+      flex-wrap: nowrap;
+      gap: 35px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      flex-wrap: nowrap;
+      gap: 30px;
+    }
+
+    @include media-breakpoint-between(sm, xl) {
+      flex-wrap: nowrap;
+      padding: 20px 0 100px;
+      gap: 25px;
+    }
+    
+    @include media-breakpoint-down(sm) {
+      flex-wrap: nowrap;
+      padding: 18px 0 99px;
+      gap: 15px;
+    }
+  }
+}
+
+.last {
+  visibility: hidden;
+
+  @include media-breakpoint-down(xl) {
+    padding: 0 5px;
+  }
+}
+
+.container {
+  @include media-breakpoint-down(xl) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

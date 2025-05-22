@@ -1,0 +1,44 @@
+@import '@/styles/mixins.scss';
+
+.faq {
+  position: relative;
+
+  @include media-breakpoint-down(md) {
+    padding: 40px 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 80px 0;
+  }
+
+  &__controls {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    @include media-breakpoint-down(md) {
+      margin-top: 38px;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-top: 94px;
+    }
+  }
+
+  &__items {
+    @include media-breakpoint-down(md) {
+      margin-top: 24px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      margin-top: 55px;
+    }
+
+    @include media-breakpoint-between(xl, xxxl) {
+      margin-top: 66px;
+    }
+    @include media-breakpoint-up(xxxl) {
+      margin-top: 88px;
+    }
+  }
+}

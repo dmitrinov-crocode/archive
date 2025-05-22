@@ -1,0 +1,100 @@
+@import '@/styles/mixins.scss';
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__icon {
+    display: flex;
+
+    @include media-breakpoint-down(md) {
+      width: 10px;
+      height: 10px;
+      min-width: 10px;
+      min-height: 10px;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      width: 17px;
+      height: 17px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      width: 24px;
+      height: 24px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      stroke: white;
+    }
+  }
+
+  &__label {
+    color: var(--white, #fff);
+    font-weight: 500;
+    line-height: 135%;
+
+    @include media-breakpoint-down(lg) {
+      & > span {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 11px;
+      margin-left: 10px;
+    }
+
+    @include media-breakpoint-between(md, xxxl) {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 26px;
+      margin-left: 15px;
+    }
+  }
+
+  &__disable {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    pointer-events: none;
+
+    .checkbox__label {
+      color: #ffffff66;
+    }
+
+    .checkbox__icon {
+      display: flex;
+
+      @include media-breakpoint-down(md) {
+        width: 10px;
+        height: 10px;
+        min-width: 10px;
+        min-height: 10px;
+      }
+
+      @include media-breakpoint-between(md, xxxl) {
+        width: 17px;
+        height: 17px;
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        width: 24px;
+        height: 24px;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        stroke: #ffffff66;
+      }
+    }
+  }
+}
